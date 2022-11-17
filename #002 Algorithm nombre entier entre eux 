@@ -1,0 +1,41 @@
+Alogorithm <premiers entre eux>
+
+Procedure premier(a:entier,b:entier)
+	Var
+		a,b,c,m	:entier
+	Debut
+		si b > a alors
+			c <-- b
+			b <-- a
+			a <-- c
+		finSi
+		repeter
+			m <-- a mod b
+			si m = 0 faire
+				si b=1 alors
+					Ecrire('Yes')
+				sinon:
+					Ecrire('No')
+				finSi
+			finSi
+			a <-- b
+			b <-- m
+		jusqu'a m = 0
+	Fin		
+Var
+	num1,num2	:entier
+
+Debut
+	repeter
+		Ecrire('Enter premier number : ')
+		lire(num1)
+		
+	jusqu'a num1 > 0
+	repeter
+		Ecrire('Enter deuxieme number : ')
+		lire(num2)
+		
+	jusqu'a num2 > 0
+	premier(num1,num2)
+Fin
+	

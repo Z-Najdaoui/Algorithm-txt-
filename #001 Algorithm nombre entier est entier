@@ -1,0 +1,29 @@
+Algorithm number-entier
+
+Var
+	done,i,num:entier
+	d:reel
+Debut
+	repeter
+		done <-- 0
+		Ecrire('Enter la number')
+		lire(num)
+		si num > 0 alors
+			done <-- 1
+	jusqu'a done = 1
+	a = 0
+	pour i de 2 a num-1 faire
+		d <-- num / i
+		si (d mod 1) = 0 faire
+			a <-- -1
+			Ecrire('No, Parce que',num,'/',i,'=',num/i)
+		finSi
+	finPour
+	si a = 0 alors
+		Ecrire('Yes')
+	finSi
+		
+			
+	
+
+Fin

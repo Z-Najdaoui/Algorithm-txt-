@@ -1,0 +1,95 @@
+Algorithm Produit-de-deux-Matrice
+Function produit(m1:reel,m2:reel):reel
+	var 
+		Tableau finalMatrice(lFinalMatrice,cFinalMatrice):reel
+		i,j,q:entier
+	Debut
+		pour i de 1 a lFinalMatrice faire
+			pour j de 1 a cFinalMatrie faire
+				finalMatrice(i,j) <-- 0
+			finPour
+		finPour
+		
+		pour i de 1 a lFinalMatrice faire
+			pour j de 1 a cFinalMatrie faire
+				pour q de 1 a l:
+					finalMatrice(i,j) <-- finalMatrice(i,j) + m1(q,j) * m2(i,q)
+				finPour
+			finPour
+		finPour
+		
+		retourne finalMatrice 
+	Fin
+Var
+	Tableau matrice1(line1,col1)			:reel
+	Tableau matricee(line2,col2)			:reel
+	i,j,m,a,l,c,cFinlaMatrice,lFinalMatrice,done	:entier
+	line1,line2,col2,col1				:reel
+	
+
+Debut
+	Ecrire('Produit of Two Matrices')
+	Ecrire('It's Important to make "the line of matrice 1/2" = "colonnes of matrice 2/1"')
+	
+	repeter
+		done <-- 0
+		Ecrire('Enter number of lines in matirice 1 : ')
+		lire(line1)
+		Ecrire('Enter number of colonnes in matirice 1 : ')
+    		lire(col1)
+    		Ercire('Enter number of lines in matirice 2 : ')
+    		lire(line2)
+    		Ecrire('Enter number of colonnes in matirice 2 : ')
+    		lire(col2)
+	si line1 = col2 alors
+		a <-- 1
+        	l <-- line1
+        	c <-- col2
+        	cFinalMatrice <-- col1
+        	lFinalMatrice <-- line2
+        	done <-- 1
+        finSi
+        si line2 = col1 alors
+        	a <-- 2
+        	l <-- line2
+        	c <-- col1
+        	cFinalMatirice <-- col2
+        	lFinalMatirice <-- line1
+        	done <-- 1
+        finSi
+	jusqu'a done=1
+
+	pour m de 1 a 2 faire
+		Ecrire('Matrice',m,' : ')
+		si m = 1 alors
+			pour i de 1 a line1 faire
+				pour j de 1 a col1 faire
+				
+					Ecrire('-Enter Value of ,line (', i,') colonne (', j, ') : ')
+					lire(matrice1(i,j))
+				finPour
+			finPour
+		
+		sinon:
+			pour i de 1 a line2 faire
+				pour j de 1 a col2 faire
+				
+					Ecrire('-Enter Value of ,line (', i,') colonne (', j, ') : ')
+					lire(matrice2(i,j))
+				finPour
+			finPour
+		finSi
+	finPour
+	
+	si a=2;
+		r <-- matrice1
+		matrice1 <-- matrice2
+		matrice2 <-- r
+	finSi
+	result <-- poduit(matrice1,matrice2)
+	Ecrire('Matrices : ')
+	Ecrire('Matrice 1 : ', matrice1)
+	Ecrire('Matrice 2 : ', matrice2)
+	Ecrire('Matrice 1 x Matrice 2 : ', result)
+	
+Fin
